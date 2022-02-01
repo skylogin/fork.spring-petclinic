@@ -6,11 +6,18 @@ pipeline {
         }
     }
     stages {
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn -version'
+                sh 'java -version'
+                sh 'mvn test'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -version'
                 sh 'java -version'
-                    sh 'mvn test'
+                sh 'mvn package -Dmaven.test.skip=true'
             }
         }
     }
