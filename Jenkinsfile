@@ -14,7 +14,7 @@ node {
                 def scannerHome = tool 'SonarQube Scanner';
 
                 // Sonarqube 7 must be configured in the Jenkins Manage Jenkins -> Configure System -> Add SonarQube server 
-                withSonarQubeEnv('Sonar7.1') {
+                withSonarQubeEnv('Sonar9.3') {
                         bat "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=0da6b6badccd490c4652b1b5fd44be34df2223de -Dsonar.projectVersion=1.0 -Dsonar.projectKey=PetClinic_Key -Dsonar.sources=src -Dsonar.java.binaries=."
                 }
         } 
