@@ -3,11 +3,11 @@ node {
         
         stage('Code Checkout') { 
 		// Get code from a repository and Git has to be installed in the system; git must be configured in the Global Tool Configuration
-		git 'https://github.com/mitesh51/spring-petclinic.git'
+		git 'https://github.com/skylogin/fork.spring-petclinic.git'
            
 		// Get the Maven tool configured in Global Tool Configuration 
 		// 'apache-maven-3.5.3' Maven tool must be configured in the global configuration.
-		mavenHome = tool 'apache-maven-3.5.3'
+		mavenHome = tool 'apache-maven-3.8.4'
         }
         stage('Code Analysis') {
                 // Configure SonarQube Scanner in Manage Jenkins -> Global Tool Configuration
@@ -15,7 +15,7 @@ node {
 
                 // Sonarqube 7 must be configured in the Jenkins Manage Jenkins -> Configure System -> Add SonarQube server 
                 withSonarQubeEnv('Sonar7.1') {
-                        bat "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=cb4e2ac86c60200796a7cf866c2a60955a505db2 -Dsonar.projectVersion=1.0 -Dsonar.projectKey=PetClinic_Key -Dsonar.sources=src -Dsonar.java.binaries=."
+                        bat "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=0da6b6badccd490c4652b1b5fd44be34df2223de -Dsonar.projectVersion=1.0 -Dsonar.projectKey=PetClinic_Key -Dsonar.sources=src -Dsonar.java.binaries=."
                 }
         } 
 	stage('Build') {
