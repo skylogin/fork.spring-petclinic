@@ -27,7 +27,7 @@ node {
                 } 
                 else {
                         // Execute Batch script if OS flavor is Windows		
-                        bat(/"${mavenHome}\bin\mvn" clean package/)
+                        bat(/"${mavenHome}\bin\mvn" package/)
                         // Publish JUnit Report
                         junit '**/target/surefire-reports/TEST-*.xml'
                 }
