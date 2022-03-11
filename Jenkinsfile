@@ -7,7 +7,7 @@ node {
            
 		// Get the Maven tool configured in Global Tool Configuration 
 		// 'apache-maven-3.5.3' Maven tool must be configured in the global configuration.
-		mavenHome = tool 'apache-maven-3.8.4'
+		mavenHome = tool 'Maven3.8.4'
         }
         stage('Code Analysis') {
                 // Configure SonarQube Scanner in Manage Jenkins -> Global Tool Configuration
